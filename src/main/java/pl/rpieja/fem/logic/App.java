@@ -3,9 +3,10 @@ package pl.rpieja.fem.logic;
 import pl.rpieja.fem.datamodel.CalculationData;
 import pl.rpieja.fem.datamodel.Grid;
 import pl.rpieja.fem.utils.DataReader;
+import pl.rpieja.fem.utils.Function;
 import pl.rpieja.fem.utils.GridCreator;
+import pl.rpieja.fem.utils.TwoDimIntegral;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.io.IOException;
 
 public class App {
@@ -15,6 +16,10 @@ public class App {
         GridCreator gridCreator;
         CalculationData data;
         Grid grid;
+        Function function = new Function();
+        System.out.println(function.calc(1.0, 1.0));
+        System.out.println(TwoDimIntegral.calculate3P(function));
+        System.out.println(TwoDimIntegral.calculate2P(function));
         String fileName = "data.properties";
         try {
             System.out.println("Loading data from file: " + fileName);

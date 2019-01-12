@@ -12,10 +12,6 @@ public class Grid {
         this.nodes = nodes;
     }
 
-    public void printGrid(){
-        System.out.println("IMPLEMENT ME!");
-    }
-
     public void addElement (Element element){
         elements.add(element);
     }

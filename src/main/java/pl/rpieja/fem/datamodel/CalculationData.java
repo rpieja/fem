@@ -1,24 +1,92 @@
 package pl.rpieja.fem.datamodel;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
+
+import java.util.Vector;
 
 public class CalculationData {
 
-    private final int nH, nL, nE, nN;
-    private final double H, L, dh, dl;
+    private final int nH;
+    private final int nL;
+    private final int nE;
+    private final int nN;
+    private final int dTau;
+    private final int totalTau;
 
-    public CalculationData(int nH, int nL, double h, double l) {
+    private final double H;
+    private final double L;
+    private final double dh;
+    private final double dl;
+    private final double initialT;
+    private final double ambientT;
+    private final double alfa;
+    private final double specHeat;
+    private final double conductCoeff;
+    private final double dens;
+
+    private Vector<Double> pGlobal;
+    private Vector<Double> pLocal;
+    private double [][] hGlobal;
+    private double [][] hLocal;
+
+    public CalculationData(
+            int nH,
+            int nL,
+            double h,
+            double l,
+            int dTau,
+            int totalTau,
+            double initialT,
+            double ambientT,
+            double alfa,
+            double specHeat,
+            double conductCoeff,
+            double dens
+    ) {
         this.nH = nH;
         this.nL = nL;
         H = h;
         L = l;
         nE = (nH - 1) * (nL - 1);
         nN = nH * nL;
-        dh=H/nH;
-        dl=L/nL;
+        dh = H / nH;
+        dl = L / nL;
+        this.dTau = dTau;
+        this.totalTau = totalTau;
+        this.initialT = initialT;
+        this.ambientT = ambientT;
+        this.alfa = alfa;
+        this.specHeat = specHeat;
+        this.conductCoeff = conductCoeff;
+        this.dens = dens;
+
+        hGlobal = new double[nN][nN];
+        hLocal= new double[4][4];
+
+        pGlobal = new Vector<>();
+        pLocal = new Vector<>();
+
+        pGlobal.setSize(nN);
+        pLocal.setSize(4);
+
+
+
     }
+
+    public int getdTau() {return dTau;}
+
+    public int getTotalTau() { return totalTau; }
+
+    public double getInitialT() { return initialT; }
+
+    public double getAmbientT() { return ambientT; }
+
+    public double getAlfa() { return alfa; }
+
+    public double getSpecHeat() { return specHeat; }
+
+    public double getConductCoeff() { return conductCoeff; }
+
+    public double getDens() { return dens; }
 
     public double getDh() {
         return dh;

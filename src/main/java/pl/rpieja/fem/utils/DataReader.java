@@ -18,7 +18,15 @@ public class DataReader {
                 Integer.parseInt(props.getProperty("nH")),
                 Integer.parseInt(props.getProperty("nL")),
                 Double.parseDouble(props.getProperty("H")),
-                Double.parseDouble(props.getProperty("L"))
+                Double.parseDouble(props.getProperty("L")),
+                Integer.parseInt(props.getProperty("dTau")),
+                Integer.parseInt(props.getProperty("totalTau")),
+                Double.parseDouble(props.getProperty("initialT")),
+                Double.parseDouble(props.getProperty("ambientT")),
+                Double.parseDouble(props.getProperty("alfa")),
+                Double.parseDouble(props.getProperty("specHeat")),
+                Double.parseDouble(props.getProperty("conductCoeff")),
+                Double.parseDouble(props.getProperty("dens"))
         );
 
     }

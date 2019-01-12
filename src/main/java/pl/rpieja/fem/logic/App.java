@@ -29,12 +29,18 @@ public class App {
 
             System.out.println("Generating grid:");
             gridCreator = new GridCreator(data);
-            grid=gridCreator.createGrid();
+            grid = gridCreator.createGrid();
             System.out.println("Grid generated successfully: ");
-            grid.printGrid();
+
+            for (int itau = 0; itau < data.getTotalTau(); itau += data.getdTau()) {
+
+                //compute mes for grid an data
 
 
 
+                //set temperatures in grid and print
+
+            }
 
         } catch (IOException e) {
             System.err.println("Error while reading file");

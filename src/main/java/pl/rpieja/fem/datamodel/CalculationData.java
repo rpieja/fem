@@ -1,6 +1,8 @@
 package pl.rpieja.fem.datamodel;
 
 
+import pl.rpieja.fem.localSystem.LocalElement;
+
 import java.util.Vector;
 
 public class CalculationData {
@@ -27,6 +29,8 @@ public class CalculationData {
     private Vector<Double> pLocal;
     private double [][] hGlobal;
     private double [][] hLocal;
+
+    private LocalElement localElement;
 
     public CalculationData(
             int nH,
@@ -68,7 +72,7 @@ public class CalculationData {
         pGlobal.setSize(nN);
         pLocal.setSize(4);
 
-
+        localElement = LocalElement.getInstance();
 
     }
 

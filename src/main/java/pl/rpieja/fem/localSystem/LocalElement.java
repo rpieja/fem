@@ -1,9 +1,16 @@
 package pl.rpieja.fem.localSystem;
 
 public class LocalElement {
+
     private static LocalElement LOCAL_ELEMENT = null;
 
-    private LocalArea[] gaussIntegrationAreaPoints;
+    private LocalArea[] gaussIntegrationAreaPoints; //punkty do warunków brzegowych
+
+
+
+
+
+
 
     private final double dNdKsi[][] = new double[4][4];
     private final double dNdEta[][] = new double[4][4];

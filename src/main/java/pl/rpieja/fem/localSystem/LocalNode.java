@@ -1,16 +1,16 @@
 package pl.rpieja.fem.localSystem;
 
 public class LocalNode {
-    private final double xi;
+    private final double ksi;
     private final double eta;
 
-    LocalNode(double xi, double eta) {
-        this.xi = xi;
+    LocalNode(double ksi, double eta) {
+        this.ksi = ksi;
         this.eta = eta;
     }
 
-    double getXi() {
-        return xi;
+    double getKsi() {
+        return ksi;
     }
 
     double getEta() {

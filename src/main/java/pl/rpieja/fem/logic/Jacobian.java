@@ -42,6 +42,10 @@ public class Jacobian {
         return matrixJ;
     }
 
+    public double getDetJ() {
+        return detJ;
+    }
+
     public double[][] getInvertedMatrixJ() {
         return invertedMatrixJ;
     }

@@ -25,10 +25,10 @@ public class CalculationData {
     private final double conductCoeff;
     private final double dens;
 
-    private Vector<Double> pGlobal;
-    private Vector<Double> pLocal;
-    private double [][] hGlobal;
-    private double [][] hLocal;
+    public Vector<Double> pGlobal;
+    public Vector<Double> pLocal;
+    public double [][] hGlobal;
+    public double [][] hLocal;
 
     private LocalElement localElement;
 
@@ -123,6 +123,9 @@ public class CalculationData {
     public double getL() {
         return L;
     }
+
+    public LocalElement getLocalElement() { return localElement; }
+
 
     public void printData() {
         System.out.println("\nH = " + this.H + "\nL = " + this.L + "\nnH = " + this.nH + "\nnL = " + this.nL);

@@ -77,8 +77,8 @@ public class FemSolver {
                 }
             }
 
-        //  WARUNKI BRZEGOWE
-
+            //  WARUNKI BRZEGOWE
+            for (int i = 0; i<)
 
         }
 

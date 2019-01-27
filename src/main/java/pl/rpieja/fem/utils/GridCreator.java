@@ -42,7 +42,7 @@ public class GridCreator {
                 counter++;
                 double x = i*data.getDl();
                 double y = j*data.getDh();
-                nodes.add(new Node(counter, x, y, 0));
+                nodes.add(new Node(counter, x, y, 0, data));
             }
     }
 

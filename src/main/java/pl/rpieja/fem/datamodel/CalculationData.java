@@ -76,6 +76,10 @@ public class CalculationData {
 
     }
 
+    public Vector<Double> getpGlobal() {return pGlobal;}
+
+    public double[][] gethGlobal() {return hGlobal;}
+
     public int getdTau() {return dTau;}
 
     public int getTotalTau() { return totalTau; }

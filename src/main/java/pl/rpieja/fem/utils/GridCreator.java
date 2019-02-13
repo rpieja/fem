@@ -28,9 +28,9 @@ public class GridCreator {
         generateNodes(nodes);
         generateElements(elements, nodes);
 
-        printNodes();
+        //printNodes();
 
-        printElements();
+        //printElements();
 
         return new Grid(elements, nodes);
     }
@@ -47,7 +47,7 @@ public class GridCreator {
     }
 
 
-    void printNodes(){
+    public void printNodes(){
         for (Node node:
              nodes) {
             System.out.println(node.getNodeId()+"\t");
@@ -75,7 +75,7 @@ public class GridCreator {
             }
     }
 
-    void printElements(){
+    public void printElements(){
         for (Element e :
                 elements) {
 

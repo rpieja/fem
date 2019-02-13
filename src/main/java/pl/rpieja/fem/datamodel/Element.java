@@ -39,6 +39,19 @@ public class Element {
 //
 //    }
 
+
+    public List<Integer> getBorderSurfacesIds() {
+        return borderSurfacesIds;
+    }
+
+    public int getBorderNodes() {
+        return borderNodes;
+    }
+
+    public Vector<Edge> getEdges() {
+        return edges;
+    }
+
     public List<Integer> getIDs() {
         return IDs;
     }

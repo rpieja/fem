@@ -29,6 +29,17 @@ public class LocalElement {
 
     private final double matrixN[][] = new double[4][4];
 
+    private final LocalArea[] gaussIntegrationAreaPoints = {//lokalne pubkty calkowania dla powierzchni
+            new LocalArea(new LocalNode(-1.0, 1.0 / Math.sqrt(3.0)),
+                    new LocalNode(-1.0, -1.0 / Math.sqrt(3.0))),
+            new LocalArea(new LocalNode(-1.0 / Math.sqrt(3.0), -1.0),
+                    new LocalNode(1.0 / Math.sqrt(3.0), -1.0)),
+            new LocalArea(new LocalNode(1.0, -1.0 / Math.sqrt(3.0)),
+                    new LocalNode(1.0, 1.0 / Math.sqrt(3.0))),
+            new LocalArea(new LocalNode(1.0 / Math.sqrt(3.0), 1.0),
+                    new LocalNode(-1.0 / Math.sqrt(3.0), 1.0))
+    };
+
     private LocalElement() {
 
         LocalNode[] gaussIntegrationPoints = {
@@ -38,12 +49,6 @@ public class LocalElement {
                 new LocalNode(P1, P2)
         };
 
-        LocalArea[] gaussIntegrationAreaPoints = {
-                new LocalArea(new LocalNode(-1., P2), new LocalNode(-1., P1)),
-                new LocalArea(new LocalNode(P1, -1.), new LocalNode(P2, -1.)),
-                new LocalArea(new LocalNode(1., P1), new LocalNode(1., P2)),
-                new LocalArea(new LocalNode(P2, 1.), new LocalNode(P1, 1.))
-        };
 
         /**
          * wypełnianie macierzy pochodnymi funkcji kształtu i wartościami
@@ -88,4 +93,8 @@ public class LocalElement {
     public double[][] getdNdEta() { return dNdEta; }
 
     public double[][] getMatrixN() { return matrixN; }
+
+    public LocalArea[] getGaussIntegrationAreaPoints() {
+        return gaussIntegrationAreaPoints;
+    }
 }

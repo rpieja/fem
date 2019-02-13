@@ -67,6 +67,20 @@ public class App {
                     grid.getNodes().get(i).setTemperature(temperatureVector.get(i));
                 }
 
+                //debug prints
+                System.out.println("P Vector");
+                for (Double elem :
+                        data.pGlobal) {
+                    System.out.printf("%.5f\t", elem);
+                }
+                System.out.printf("\n");
+
+                System.out.println("H matrix");
+                for(int i = 0; i<data.getnN();i++){
+                    for(int j = 0; j<data.getnN();j++)
+                        System.out.printf("%.5f\t", data.hGlobal[i][j]);
+                    System.out.printf("\n");
+                }
 
                 //print results
                 output.println("Krok: " + step++);
